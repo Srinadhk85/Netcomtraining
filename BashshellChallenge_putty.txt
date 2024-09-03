@@ -1,0 +1,109 @@
+vi SrinadhReddy.sh
+
+#!/bin/bash
+
+# Set your name prefix
+name_prefix="SrinadhReddy"
+
+# Find the maximum number from existing files, default to 0 if none exist
+max_num=$(ls ${name_prefix}[0-9]* 2>/dev/null | grep -oE '[0-9]+' | sort -n | tail -n 1)
+max_num=${max_num:-0}
+
+# Create 25 new files with incrementing numbers
+for i in {1..25}; do
+    next_num=$((max_num + i))
+    touch "${name_prefix}${next_num}"
+done
+
+
+###########################Above is the script(SrinadhReddy.sh)#####################################################
+
+
+[ec2-user@ip-10-0-10-97 ~]$ pwd
+/home/ec2-user
+[ec2-user@ip-10-0-10-97 ~]$ ls
+companyA
+[ec2-user@ip-10-0-10-97 ~]$ cd companyA/
+[ec2-user@ip-10-0-10-97 companyA]$ ls
+CEO  Documents  Employees  FolderListing.csv  HR  Management  Roster.csv  Sales  SharedFolders  Shipping
+[ec2-user@ip-10-0-10-97 companyA]$ pwd
+/home/ec2-user/companyA
+[ec2-user@ip-10-0-10-97 companyA]$ vi SrinadhReddy.sh
+[ec2-user@ip-10-0-10-97 companyA]$ ls
+CEO  Documents  Employees  FolderListing.csv  HR  Management  Roster.csv  Sales  SharedFolders  Shipping  SrinadhReddy.sh
+[ec2-user@ip-10-0-10-97 companyA]$ cat SrinadhReddy.sh
+#!/bin/bash
+
+# Set your name prefix
+name_prefix="SrinadhReddy"
+
+# Find the maximum number from existing files, default to 0 if none exist
+max_num=$(ls ${name_prefix}[0-9]* 2>/dev/null | grep -oE '[0-9]+' | sort -n | tail -n 1)
+max_num=${max_num:-0}
+
+# Create 25 new files with incrementing numbers
+for i in {1..25}; do
+    next_num=$((max_num + i))
+    touch "${name_prefix}${next_num}"
+done
+[ec2-user@ip-10-0-10-97 companyA]$ ls -l SrinadhReddy.sh
+-rw-rw-r-- 1 ec2-user ec2-user 392 Sep  3 08:59 SrinadhReddy.sh
+[ec2-user@ip-10-0-10-97 companyA]$ sudo chmod 755 SrinadhReddy.sh
+[ec2-user@ip-10-0-10-97 companyA]$ ls -l
+total 8
+drwxr-xr-x 2 ec2-user Personnel    6 Sep  3 08:57 CEO
+drwxr-xr-x 2 ec2-user Personnel    6 Sep  3 08:57 Documents
+drwxr-xr-x 2 ec2-user Personnel    6 Sep  3 08:57 Employees
+-rw-r--r-- 1 ec2-user Personnel 2828 Sep  3 08:57 FolderListing.csv
+drwxr-xr-x 6 ec2-user HR          72 Sep  3 08:57 HR
+drwxr-xr-x 2 ec2-user Personnel    6 Sep  3 08:57 Management
+-rw-r--r-- 1 ec2-user Personnel    0 Sep  3 08:57 Roster.csv
+drwxr-xr-x 2 ec2-user Sales        6 Sep  3 08:57 Sales
+drwxr-xr-x 2 ec2-user Personnel   94 Sep  3 08:57 SharedFolders
+drwxr-xr-x 2 ec2-user Shipping     6 Sep  3 08:57 Shipping
+-rwxr-xr-x 1 ec2-user ec2-user   392 Sep  3 08:59 SrinadhReddy.sh
+[ec2-user@ip-10-0-10-97 companyA]$ ./SrinadhReddy.sh
+[ec2-user@ip-10-0-10-97 companyA]$ ls -ltr
+total 8
+drwxr-xr-x 2 ec2-user Personnel    6 Sep  3 08:57 Documents
+drwxr-xr-x 6 ec2-user HR          72 Sep  3 08:57 HR
+drwxr-xr-x 2 ec2-user Personnel    6 Sep  3 08:57 Management
+drwxr-xr-x 2 ec2-user Personnel    6 Sep  3 08:57 Employees
+drwxr-xr-x 2 ec2-user Personnel    6 Sep  3 08:57 CEO
+-rw-r--r-- 1 ec2-user Personnel    0 Sep  3 08:57 Roster.csv
+-rw-r--r-- 1 ec2-user Personnel 2828 Sep  3 08:57 FolderListing.csv
+drwxr-xr-x 2 ec2-user Personnel   94 Sep  3 08:57 SharedFolders
+drwxr-xr-x 2 ec2-user Shipping     6 Sep  3 08:57 Shipping
+drwxr-xr-x 2 ec2-user Sales        6 Sep  3 08:57 Sales
+-rwxr-xr-x 1 ec2-user ec2-user   392 Sep  3 08:59 SrinadhReddy.sh
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy1
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy2
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy5
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy4
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy3
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy6
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy8
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy7
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy9
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy10
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy12
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy11
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy13
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy16
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy15
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy14
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy18
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy17
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy19
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy20
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy22
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy21
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy23
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy25
+-rw-rw-r-- 1 ec2-user ec2-user     0 Sep  3 08:59 SrinadhReddy24
+[ec2-user@ip-10-0-10-97 companyA]$ ls
+CEO                HR          SharedFolders   SrinadhReddy12  SrinadhReddy16  SrinadhReddy20  SrinadhReddy24
+Documents          Management  Shipping        SrinadhReddy13  SrinadhReddy17  SrinadhReddy21  SrinadhReddy25
+Employees          Roster.csv  SrinadhReddy10  SrinadhReddy14  SrinadhReddy18  SrinadhReddy22  SrinadhReddy.sh
+FolderListing.csv  Sales       SrinadhReddy11  SrinadhReddy15  SrinadhReddy19  SrinadhReddy23
+[ec2-user@ip-10-0-10-97 companyA]$ 
